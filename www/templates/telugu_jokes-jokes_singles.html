@@ -1,0 +1,31 @@
+	<ion-view view-title="{{ jokes.title.rendered }}" hide-nav-bar="false" >
+		<!-- content -->
+		<ion-content delegate-handle="top"   id="page-jokes_singles" class="page-jokes_singles">
+		
+			<ion-refresher pulling-text="Pull to refresh..."  on-refresh="doRefresh()"></ion-refresher>
+			<div class="tabs tabs-calm tabs-icon-top static">
+				<a ng-click="$ionicGoBack()" class="tab-item">
+					<i class="icon ion-ios-albums-outline"></i> List
+				</a>
+				<a  class="tab-item tab-item-active active">
+					<i class="icon ion-ios-list-outline"></i> Detail
+				</a>
+				</div>
+			<div class="list card">
+					<div class="item"  ng-bind-html="jokes.title.rendered | to_trusted">{{jokes.title.rendered}}</div>
+					<div class="item item-text-wrap noborder to_trusted" ng-bind-html="jokes.content.rendered | strHTML"></div>
+					<div class="item">
+					<p>Share</p>
+					<div class="button-bar">
+						<button class="button button-small button-assertive icon ion-social-googleplus" ng-click="openURL('https://plus.google.com/share?url=' + jokes.link)"></button>
+						<button class="button button-small button-positive icon ion-social-facebook" ng-click="openURL('https://facebook.com/sharer/sharer.php?u=' + jokes.link)"></button>
+						<button class="button button-small button-calm icon ion-social-twitter" ng-click="openURL('https://twitter.com/share?url=' + jokes.link)"></button>
+						<button class="button button-small button-assertive-900 icon ion-social-pinterest" ng-click="openURL('https://pinterest.com/pin/create/bookmarklet/?&url=' + jokes.link)"></button>
+						<button class="button button-small button-positive-900 icon ion-social-linkedin" ng-click="openURL('https://www.linkedin.com/shareArticle?url=' + jokes.link)"></button>
+					</div>
+					</div>
+			</div>
+
+		</ion-content>
+		<!-- ./content -->
+	</ion-view>

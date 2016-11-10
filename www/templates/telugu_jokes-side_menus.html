@@ -1,0 +1,34 @@
+<ion-side-menus enable-menu-with-back-views="false">
+	<ion-side-menu-content>
+		<ion-nav-bar ng-show="$root.headerExists" id="navbar-right-top" class="page-title bar-calm">
+			<ion-nav-back-button></ion-nav-back-button>
+			<ion-nav-buttons side="left">
+				<button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+			</ion-nav-buttons>
+			<ion-nav-buttons side="right">
+				<button class="button button-icon button-clear ion-android-more-vertical" id="menu-popover" ng-click="popover.show($event)"></button>
+			</ion-nav-buttons>
+		</ion-nav-bar>
+		<ion-nav-view name="fabButtonUp"></ion-nav-view>
+		<ion-nav-view name="telugu_jokes-side_menus"></ion-nav-view>
+	</ion-side-menu-content>
+	<ion-side-menu side="left">
+		<ion-header-bar class="text-center expanded calm-bg">
+			<img ng-src="data/images/icon/laugh_icon(1).png" class="avatar motion spin fade" />
+			<div class="menu-bottom">Telugu Jokes<br/></div>
+		</ion-header-bar>
+		<ion-content class="has-expanded-header calm-bg light">
+			<ion-list class="list" >
+				<ion-item  ng-soundtouch="true"  class="menu-jokes item-sidebar item item-icon-left text-left dark-ink" nav-clear="" menu-close="" ui-sref="telugu_jokes.jokes">
+					<i class="icon ion-android-happy"></i> Jokes
+				</ion-item>
+				<ion-item  ng-soundtouch="true"  class="menu-quotes item-sidebar item item-icon-left text-left dark-ink" nav-clear="" menu-close="" ui-sref="telugu_jokes.quotes">
+					<i class="icon ion-android-list"></i> Quotes
+				</ion-item>
+				<ion-item  ng-soundtouch="true"  class="menu-more_apps item-sidebar item item-icon-left text-left dark-ink" nav-clear="" menu-close="" ng-click="openAppBrowser('https://play.google.com/store/apps/developer?id=BGB+Info')">
+					<i class="icon ion-android-add"></i> More Apps
+				</ion-item>
+			</ion-list>
+		</ion-content>
+	</ion-side-menu>
+</ion-side-menus>
