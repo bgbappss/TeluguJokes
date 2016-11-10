@@ -69,6 +69,7 @@
 	<!-- ./default -->
 	<plugin name="cordova-plugin-admobpro" />
 	<plugin name="cordova-plugin-inappbrowser" />
+	<plugin name="cordova-plugin-fcm" />
 	<platform name="android">
 		<plugin name="cordova-plugin-velda-devicefeedback" />
 	</platform>

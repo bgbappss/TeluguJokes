@@ -11,6 +11,20 @@ angular.module("telugu_jokes", ["ngCordova","ionic","ionMdInput","ionic-material
 			}
 
 
+			if(window.cordova && FCMPlugin){
+				FCMPlugin.getToken(function (token) {
+				}, function (err) {
+				});
+				FCMPlugin.onNotification(function (data){
+					if (data.wasTapped) {
+					}else {
+					}
+				}, function (msg) {
+				}, function (err) {
+				});
+			}    
+
+
 		});
 	})
 
