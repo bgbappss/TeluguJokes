@@ -1,7 +1,8 @@
 	<ion-view view-title="{{ quotes.title.rendered }}" hide-nav-bar="false" >
 		<!-- content -->
 		<ion-content delegate-handle="top"   id="page-quotes_singles" class="page-quotes_singles">
-					<ion-refresher pulling-text="Pull to refresh..."  on-refresh="doRefresh()"></ion-refresher>
+		
+			<ion-refresher pulling-text="Pull to refresh..."  on-refresh="doRefresh()"></ion-refresher>
 			<div class="tabs tabs-calm tabs-icon-top static">
 				<a ng-click="$ionicGoBack()" class="tab-item">
 					<i class="icon ion-ios-albums-outline"></i> List
@@ -11,7 +12,7 @@
 				</a>
 				</div>
 			<div class="list card">
-					<b><div class="item"  ng-bind-html="quotes.title.rendered | to_trusted">{{quotes.title.rendered}}</div></b>
+					<div class="item"  ng-bind-html="quotes.title.rendered | to_trusted">{{quotes.title.rendered}}</div>
 					<div class="item item-text-wrap noborder to_trusted" ng-bind-html="quotes.content.rendered | strHTML"></div>
 					<div class="item">
 					<p>Share</p>

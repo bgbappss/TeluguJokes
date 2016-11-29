@@ -330,8 +330,8 @@ angular.module("telugu_jokes.controllers", [])
 	var targetQuery = ""; //default param
 	var raplaceWithQuery = "";
 	//fix url Jokes
-	targetQuery = "per_page=20"; //default param
-	raplaceWithQuery = "per_page=20";
+	targetQuery = "per_page=100"; //default param
+	raplaceWithQuery = "per_page=100";
 	
 	$scope.gmapOptions = {options: { scrollwheel: false }};
 	
@@ -364,7 +364,7 @@ angular.module("telugu_jokes.controllers", [])
 	}
 	if(!angular.isObject(data_jokess)){
 		$timeout(function() {
-			var url_request = "http://gumig.com/jokes/wp-json/wp/v2/posts?per_page=20".replace(targetQuery,raplaceWithQuery);
+			var url_request = "http://gumig.com/jokes/wp-json/wp/v2/posts?per_page=100".replace(targetQuery,raplaceWithQuery);
 			// overwrite HTTP Header 
 			http_header = {
 				headers: {
@@ -398,7 +398,7 @@ angular.module("telugu_jokes.controllers", [])
 			},function(response) {
 			
 				$timeout(function() {
-					var url_request = "http://gumig.com/jokes/wp-json/wp/v2/posts?per_page=20&callback=JSON_CALLBACK".replace(targetQuery,raplaceWithQuery);
+					var url_request = "http://gumig.com/jokes/wp-json/wp/v2/posts?per_page=100&callback=JSON_CALLBACK".replace(targetQuery,raplaceWithQuery);
 					// overwrite HTTP Header 
 					http_header = {
 						headers: {
@@ -460,7 +460,7 @@ angular.module("telugu_jokes.controllers", [])
 	
 	// TODO: jokesCtrl --|-- $scope.doRefresh
 	$scope.doRefresh = function(){
-		var url_request ="http://gumig.com/jokes/wp-json/wp/v2/posts?per_page=20".replace(targetQuery,raplaceWithQuery);
+		var url_request ="http://gumig.com/jokes/wp-json/wp/v2/posts?per_page=100".replace(targetQuery,raplaceWithQuery);
 		// retry retrieving data
 		window.localStorage.clear();
 		// overwrite http_header 
@@ -497,7 +497,7 @@ angular.module("telugu_jokes.controllers", [])
 			
 		// retrieving data with jsonp
 			$timeout(function() {
-			var url_request ="http://gumig.com/jokes/wp-json/wp/v2/posts?per_page=20&callback=JSON_CALLBACK".replace(targetQuery,raplaceWithQuery);
+			var url_request ="http://gumig.com/jokes/wp-json/wp/v2/posts?per_page=100&callback=JSON_CALLBACK".replace(targetQuery,raplaceWithQuery);
 				// overwrite http_header 
 				http_header = {
 					headers: {
@@ -703,7 +703,7 @@ console.log(data_jokess);
 			params: http_params
 		};
 		// TODO: jokes_singlesCtrl --|-- $http.get
-		$http.get("http://gumig.com/jokes/wp-json/wp/v2/posts?per_page=20",http_header).then(function(response) {
+		$http.get("http://gumig.com/jokes/wp-json/wp/v2/posts?per_page=100",http_header).then(function(response) {
 			// Get data single
 			var datas = response.data;
 			try {
@@ -752,7 +752,7 @@ console.log(data_jokess);
 			params: http_params
 		};
 		// TODO: jokes_singlesCtrl --|------ $http.get
-		$http.get("http://gumig.com/jokes/wp-json/wp/v2/posts?per_page=20",http_header).then(function(response) {
+		$http.get("http://gumig.com/jokes/wp-json/wp/v2/posts?per_page=100",http_header).then(function(response) {
 			// Get data single
 			var datas = response.data;
 			window.localStorage.setItem("data_jokess",JSON.stringify(datas));
@@ -764,7 +764,7 @@ console.log(data_jokess);
 		},function(data) {
 			// Error message
 		// TODO: jokes_singlesCtrl --|---------- $http.jsonp
-				$http.jsonp("http://gumig.com/jokes/wp-json/wp/v2/posts?per_page=20&callback=JSON_CALLBACK",http_header).success(function(response){
+				$http.jsonp("http://gumig.com/jokes/wp-json/wp/v2/posts?per_page=100&callback=JSON_CALLBACK",http_header).success(function(response){
 					// Get data single
 					var datas = response;
 					window.localStorage.setItem("data_jokess",JSON.stringify(datas));
@@ -943,6 +943,10 @@ console.log(data_jokess);
 	};
 	var targetQuery = ""; //default param
 	var raplaceWithQuery = "";
+	//fix url Quotes
+	targetQuery = "per_page=100"; //default param
+	raplaceWithQuery = "per_page=100";
+	
 	$scope.gmapOptions = {options: { scrollwheel: false }};
 	
 	var fetch_per_scroll = 1;
@@ -974,7 +978,7 @@ console.log(data_jokess);
 	}
 	if(!angular.isObject(data_quotess)){
 		$timeout(function() {
-			var url_request = "http://gumig.com/Quotes/wp-json/wp/v2/posts".replace(targetQuery,raplaceWithQuery);
+			var url_request = "http://gumig.com/Quotes/wp-json/wp/v2/posts?per_page=100".replace(targetQuery,raplaceWithQuery);
 			// overwrite HTTP Header 
 			http_header = {
 				headers: {
@@ -1008,7 +1012,7 @@ console.log(data_jokess);
 			},function(response) {
 			
 				$timeout(function() {
-					var url_request = "http://gumig.com/Quotes/wp-json/wp/v2/posts?callback=JSON_CALLBACK".replace(targetQuery,raplaceWithQuery);
+					var url_request = "http://gumig.com/Quotes/wp-json/wp/v2/posts?per_page=100&callback=JSON_CALLBACK".replace(targetQuery,raplaceWithQuery);
 					// overwrite HTTP Header 
 					http_header = {
 						headers: {
@@ -1070,7 +1074,7 @@ console.log(data_jokess);
 	
 	// TODO: quotesCtrl --|-- $scope.doRefresh
 	$scope.doRefresh = function(){
-		var url_request ="http://gumig.com/Quotes/wp-json/wp/v2/posts".replace(targetQuery,raplaceWithQuery);
+		var url_request ="http://gumig.com/Quotes/wp-json/wp/v2/posts?per_page=100".replace(targetQuery,raplaceWithQuery);
 		// retry retrieving data
 		window.localStorage.clear();
 		// overwrite http_header 
@@ -1107,7 +1111,7 @@ console.log(data_jokess);
 			
 		// retrieving data with jsonp
 			$timeout(function() {
-			var url_request ="http://gumig.com/Quotes/wp-json/wp/v2/posts?callback=JSON_CALLBACK".replace(targetQuery,raplaceWithQuery);
+			var url_request ="http://gumig.com/Quotes/wp-json/wp/v2/posts?per_page=100&callback=JSON_CALLBACK".replace(targetQuery,raplaceWithQuery);
 				// overwrite http_header 
 				http_header = {
 					headers: {
@@ -1313,7 +1317,7 @@ console.log(data_quotess);
 			params: http_params
 		};
 		// TODO: quotes_singlesCtrl --|-- $http.get
-		$http.get("http://gumig.com/Quotes/wp-json/wp/v2/posts",http_header).then(function(response) {
+		$http.get("http://gumig.com/Quotes/wp-json/wp/v2/posts?per_page=100",http_header).then(function(response) {
 			// Get data single
 			var datas = response.data;
 			try {
@@ -1362,7 +1366,7 @@ console.log(data_quotess);
 			params: http_params
 		};
 		// TODO: quotes_singlesCtrl --|------ $http.get
-		$http.get("http://gumig.com/Quotes/wp-json/wp/v2/posts",http_header).then(function(response) {
+		$http.get("http://gumig.com/Quotes/wp-json/wp/v2/posts?per_page=100",http_header).then(function(response) {
 			// Get data single
 			var datas = response.data;
 			window.localStorage.setItem("data_quotess",JSON.stringify(datas));
@@ -1374,7 +1378,7 @@ console.log(data_quotess);
 		},function(data) {
 			// Error message
 		// TODO: quotes_singlesCtrl --|---------- $http.jsonp
-				$http.jsonp("http://gumig.com/Quotes/wp-json/wp/v2/posts?callback=JSON_CALLBACK",http_header).success(function(response){
+				$http.jsonp("http://gumig.com/Quotes/wp-json/wp/v2/posts?per_page=100&callback=JSON_CALLBACK",http_header).success(function(response){
 					// Get data single
 					var datas = response;
 					window.localStorage.setItem("data_quotess",JSON.stringify(datas));

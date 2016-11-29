@@ -3,6 +3,7 @@
 		<ion-content delegate-handle="top"   id="page-quotes" class=" page-quotes">
 					<ion-refresher pulling-text="Pull to refresh..."  on-refresh="doRefresh()"></ion-refresher>
 			
+
 			<div class="card list light-bg animate-fade-slide-in-right">
 				<a class="item item-icon-left ink-calm item-icon-right "  ng-repeat="item in quotess | filter:q as results" ng-init="$last ? fireEvent() : null" ng-href="#/telugu_jokes/quotes_singles/{{item.id}}" >
 					<i class="icon calm ion-bookmark"></i>
